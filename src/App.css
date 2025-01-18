@@ -1,0 +1,42 @@
+:root {
+  --color-purple: #a729f5;
+  --color-light-purple: #d394fa;
+  --color-dark-navy: #3c4e68;
+  --color-success: #26d982;
+  --color-danger: #ee5353;
+  --color-dark-blue: #303250;
+  --color-grey: #626c7f;
+  --color-light: #f5f6fa;
+  --color-dark: #adc2e1;
+  --color-white: #ffffff;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-size: clamp(1.75rem, 0.9577464788732395rem + 3.3802816901408446vw, 4rem);
+}
+
+/* Mobile */
+body {
+  background-image: url("../src/assets/images/pattern-background-mobile-light.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Tablet */
+@media (min-width: 30.063em) and (max-width: 48em) {
+  body {
+    background-image: url("../src/assets/images/pattern-background-tablet-light.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+/* Desktop */
+@media (min-width: 64em) {
+  body {
+    background-image: url("../src/assets/images/pattern-background-desktop-light.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
