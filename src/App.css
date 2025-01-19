@@ -28,7 +28,7 @@ body {
   background-image: var(--mobile-bg);
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 /* Tablet */
