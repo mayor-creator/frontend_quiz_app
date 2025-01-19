@@ -6,9 +6,13 @@
   --color-danger: #ee5353;
   --color-dark-blue: #303250;
   --color-grey: #626c7f;
-  --color-light: #f5f6fa;
+  --color-light-grey: #f4f6fa;
   --color-dark: #adc2e1;
   --color-white: #ffffff;
+}
+
+body {
+  background-color: var(--color-light-grey);
 }
 
 h1 {
@@ -21,6 +25,7 @@ body {
   background-image: url("../src/assets/images/pattern-background-mobile-light.svg");
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 1.5rem;
 }
 
 /* Tablet */

@@ -1,7 +1,14 @@
+import { QuizStartMenu } from "./assets/component/QuizMenu/QuizStartMenu.jsx";
 import "./App.css";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <>
+        <QuizStartMenu />
+      </>
+    </>
+  );
 }
 
 export default App;
