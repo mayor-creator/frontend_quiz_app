@@ -16,11 +16,11 @@
 }
 
 .titleSpanText {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .subjectText {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: italic;
   color: var(--color-grey-navy);
 }
