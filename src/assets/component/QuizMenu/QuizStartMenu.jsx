@@ -6,6 +6,7 @@ import htmlIcon from "../../images/icon-html.svg";
 import cssIcon from "../../images/icon-css.svg";
 import jsIcon from "../../images/icon-js.svg";
 import accessibilityIcon from "../../images/icon-accessibility.svg";
+import styles from "./QuizStartMenu.module.css";
 
 export function QuizStartMenu() {
   return (
@@ -15,12 +16,13 @@ export function QuizStartMenu() {
       </header>
 
       <main>
-        <div className="titleContainer">
-          <div className="headerTitleContainer">
-            <h1 className="titleText">
-              Welcome to the <span>Frontend Quiz !</span>
+        <div className={styles.titleContainer}>
+          <div className={styles.headerTitleContainer}>
+            <h1 className={styles.titleText}>
+              Welcome to the{" "}
+              <span className={styles.titleSpanText}>Frontend Quiz !</span>
             </h1>
-            <p className="subjectText">Pick a subject to get started</p>
+            <p className={styles.subjectText}>Pick a subject to get started.</p>
           </div>
         </div>
         <div>
@@ -55,7 +57,7 @@ export function QuizStartMenu() {
                 />
               </div>
               <div>
-                <p>HTML</p>
+                <p>Javascript</p>
               </div>
             </QuizButton>
           </div>
@@ -70,7 +72,7 @@ export function QuizStartMenu() {
                 />
               </div>
               <div>
-                <p>HTML</p>
+                <p>Accessibility</p>
               </div>
             </QuizButton>
           </div>
