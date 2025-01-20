@@ -4,11 +4,13 @@
   --color-success: #26d982;
   --color-danger: #ee5353;
   --color-dark-blue: #303250;
+  --color-navy: #3b4d66;
   --color-grey-navy: #626c7f;
+  --color-dark-navy: #313e51;
   --color-light-grey: #f4f6fa;
   --color-light-bluish: #abc1e1;
   --color-pure-white: #ffffff;
-  --primary-color: #3c4e68;
+  --primary-color: #313e51;
   --background-color: #f4f6fa;
   --mobile-bg: url("../src/assets/images/pattern-background-mobile-light.svg");
   --tablet-bg: url("../src/assets/images/pattern-background-tablet-light.svg");
@@ -16,8 +18,8 @@
 }
 
 [data-theme="dark"] {
-  --primary-color: #ffffff;
-  --background-color: #3c4e68;
+  --primary-color: var(--color-pure-white);
+  --background-color: var(--color-dark-navy);
   --mobile-bg: url("../src/assets/images/pattern-background-mobile-dark.svg");
   --tablet-bg: url("../src/assets/images/pattern-background-tablet-dark.svg");
   --desktop-bg: url("../src/assets/images/pattern-background-desktop-dark.svg");

@@ -32,16 +32,29 @@
 }
 
 .btn {
+  color: var(--color-dark-navy);
   border-radius: 0.75rem;
   background-color: var(--color-pure-white);
   display: flex;
   gap: 1rem;
   padding: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .imgBox {
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.313rem;
   width: 2.5rem;
+  height: 2.5rem;
+}
+
+.textBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 2.5rem;
 }
 
@@ -69,6 +82,7 @@
     color: var(--color-light-bluish);
   }
   .btn {
-    background-color: #3b4d66;
+    color: var(--color-pure-white);
+    background-color: var(--color-navy);
   }
 }
