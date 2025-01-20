@@ -28,7 +28,9 @@ body {
   background-image: var(--mobile-bg);
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: "Inter", serif;
+  font-family: "Rubik", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   padding: 2rem 1.5rem;
 }
 

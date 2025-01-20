@@ -60,30 +60,3 @@ h6 {
 #__next {
   isolation: isolate;
 }
-
-/* Custom fonts */
-@font-face {
-  font-display: swap;
-  font-family: "Inter", serif;
-  font-style: normal;
-  font-weight: 400;
-  src: url("./assets/fonts/inter-v18-latin-regular.woff2") format("woff2");
-}
-
-/* inter-500 - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Inter", serif;
-  font-style: normal;
-  font-weight: 500;
-  src: url("./assets/fonts/inter-v18-latin-500.woff2") format("woff2");
-}
-
-/* inter-700 - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Inter", serif;
-  font-style: normal;
-  font-weight: 700;
-  src: url("./assets/fonts/inter-v18-latin-700.woff2") format("woff2");
-}
