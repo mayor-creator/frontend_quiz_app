@@ -25,9 +25,28 @@
   color: var(--color-grey-navy);
 }
 
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  border-radius: 0.75rem;
+  background-color: var(--color-pure-white);
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+}
+
+.imgBox {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 [data-theme="dark"] {
   .titleText {
-    color: var(--color-white);
+    color: var(--color-pure-white);
   }
   .subjectText {
     color: var(--color-light-bluish);
