@@ -40,8 +40,25 @@
 }
 
 .imgBox {
+  border-radius: 5px;
   width: 2.5rem;
   height: 2.5rem;
+}
+
+.html {
+  background-color: #ffb88f;
+}
+
+.css {
+  background-color: #88ebbb;
+}
+
+.js {
+  background-color: #8eadff;
+}
+
+.accessibility {
+  background-color: #cf88fa;
 }
 
 [data-theme="dark"] {
@@ -50,5 +67,8 @@
   }
   .subjectText {
     color: var(--color-light-bluish);
+  }
+  .btn {
+    background-color: #3b4d66;
   }
 }

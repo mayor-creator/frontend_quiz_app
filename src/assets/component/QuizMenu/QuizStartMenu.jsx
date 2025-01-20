@@ -28,7 +28,7 @@ export function QuizStartMenu() {
         <div className={styles.buttonContainer}>
           <div>
             <QuizButton className={styles.btn}>
-              <div className={styles.imgBox}>
+              <div className={`${styles.imgBox} ${styles.html}`}>
                 <img src={htmlIcon} alt="html icon" width={24} height={24} />
               </div>
               <div>
@@ -38,7 +38,7 @@ export function QuizStartMenu() {
           </div>
           <div>
             <QuizButton className={styles.btn}>
-              <div className={styles.imgBox}>
+              <div className={`${styles.imgBox} ${styles.css}`}>
                 <img src={cssIcon} alt="css icon" width={24} height={24} />
               </div>
               <div>
@@ -48,7 +48,7 @@ export function QuizStartMenu() {
           </div>
           <div>
             <QuizButton className={styles.btn}>
-              <div className={styles.imgBox}>
+              <div className={`${styles.imgBox} ${styles.js}`}>
                 <img
                   src={jsIcon}
                   alt="javascript icon"
@@ -63,7 +63,7 @@ export function QuizStartMenu() {
           </div>
           <div>
             <QuizButton className={styles.btn}>
-              <div className={styles.imgBox}>
+              <div className={`${styles.imgBox} ${styles.accessibility}`}>
                 <img
                   src={accessibilityIcon}
                   alt="accessibility icon"
