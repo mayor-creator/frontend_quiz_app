@@ -1,0 +1,9 @@
+.button {
+  border: none;
+  border-radius: 1.5rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
+}

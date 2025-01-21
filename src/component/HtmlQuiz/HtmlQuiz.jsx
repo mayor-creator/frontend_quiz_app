@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { QuizButton } from "../ui/QuizMenuButton/QuizButton.jsx";
+import { QuizQuestion } from "../ui/QuizQuestionButton/QuizQuestion.jsx";
 import { Title } from "../Title/Title.jsx";
 
 import data from "../../data.json";
@@ -15,6 +16,25 @@ export function HtmlQuiz() {
   const [score, setScore] = useState(0);
 
   const currentQuestion = questions[currentQuestionIndex];
+
+  const handleAnswerSelect = (index) => {
+    setSelectedAnswer(index);
+  };
+
+  const handleNextQuestion = () => {
+    if (selectedAnswer === null) return;
+
+    if (
+      selectedAnswer === currentQuestion.options.indexOf(currentQuestion.answer)
+    ) {
+      setScore(score + 1);
+    }
+
+    if (currentQuestionIndex + 1 < questions.length) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setSelectedAnswer(null);
+    }
+  };
 
   return (
     <>
@@ -38,15 +58,28 @@ export function HtmlQuiz() {
           <ul>
             {currentQuestion.options.map((option, index) => (
               <li key={index}>
-                <QuizButton type={String.fromCharCode(65 + index)}>
+                <QuizQuestion
+                  type={String.fromCharCode(65 + index)}
+                  onClick={() => handleAnswerSelect(index)}
+                  style={{
+                    backgroundColor:
+                      selectedAnswer === index ? "#adc2e1" : "white",
+                  }}
+                >
                   <div>{option}</div>
-                </QuizButton>
+                </QuizQuestion>
               </li>
             ))}
           </ul>
         </div>
+
         <div>
-          <QuizButton>Submit</QuizButton>
+          <QuizButton
+            onClick={handleNextQuestion}
+            disabled={selectedAnswer === null}
+          >
+            Submit
+          </QuizButton>
         </div>
       </main>
     </>

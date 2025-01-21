@@ -1,7 +1,7 @@
-export function QuizQuestion({ type, children }) {
+export function QuizQuestion({ type, children, ...delegated }) {
   return (
     <>
-      <button>
+      <button {...delegated}>
         <div>{type}</div>
         <div>{children}</div>
       </button>
