@@ -2,8 +2,8 @@ import { useId, useContext } from "react";
 
 import { ThemeContext } from "./ThemeContext";
 
-import lightIcon from "../../images/icon-sun-light.svg";
-import darkIcon from "../../images/icon-moon-light.svg";
+import lightIcon from "../../assets/images/icon-sun-light.svg";
+import darkIcon from "../../assets/images/icon-moon-light.svg";
 import styles from "./Theme.module.css";
 
 export function ThemeToggle() {

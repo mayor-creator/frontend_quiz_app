@@ -1,11 +1,12 @@
-import { ThemeToggle } from "../Theme/Theme";
+import { ThemeToggle } from "../Theme/Theme.jsx";
 
 import { QuizButton } from "../ui/QuizMenuButton/QuizButton.jsx";
+import { HtmlQuiz } from "../HtmlQuiz/HtmlQuiz.jsx";
 
-import htmlIcon from "../../images/icon-html.svg";
-import cssIcon from "../../images/icon-css.svg";
-import jsIcon from "../../images/icon-js.svg";
-import accessibilityIcon from "../../images/icon-accessibility.svg";
+import htmlIcon from "../../assets/images/icon-html.svg";
+import cssIcon from "../../assets/images/icon-css.svg";
+import jsIcon from "../../assets/images/icon-js.svg";
+import accessibilityIcon from "../../assets/images/icon-accessibility.svg";
 import styles from "./QuizStartMenu.module.css";
 
 export function QuizStartMenu() {
@@ -78,6 +79,8 @@ export function QuizStartMenu() {
           </div>
         </div>
       </main>
+
+      <HtmlQuiz />
     </>
   );
 }

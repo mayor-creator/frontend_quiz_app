@@ -1,6 +1,6 @@
-import { ThemeContextProvider } from "./assets/component/Theme/ThemeContext.jsx";
+import { ThemeContextProvider } from "./component/Theme/ThemeContext.jsx";
 
-import { QuizStartMenu } from "./assets/component/QuizMenu/QuizStartMenu.jsx";
+import { QuizStartMenu } from "./component/QuizMenu/QuizStartMenu.jsx";
 import "./App.css";
 
 function App() {

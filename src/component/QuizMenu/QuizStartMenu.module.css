@@ -1,0 +1,101 @@
+.titleContainer {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.headerTitleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.titleText {
+  color: #313e51;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.titleSpanText {
+  font-weight: 500;
+}
+
+.subjectText {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--color-grey-navy);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  color: var(--color-dark-navy);
+  border-radius: 0.75rem;
+  background-color: var(--color-pure-white);
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.imgBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.313rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.textBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+}
+
+.html {
+  background-color: #ffb88f;
+}
+
+.css {
+  background-color: #88ebbb;
+}
+
+.js {
+  background-color: #8eadff;
+}
+
+.accessibility {
+  background-color: #cf88fa;
+}
+
+[data-theme="dark"] {
+  .titleText {
+    color: var(--color-pure-white);
+  }
+  .subjectText {
+    color: var(--color-light-bluish);
+  }
+  .btn {
+    color: var(--color-pure-white);
+    background-color: var(--color-navy);
+  }
+}
