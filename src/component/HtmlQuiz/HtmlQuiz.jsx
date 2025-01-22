@@ -3,8 +3,8 @@ import { useState } from "react";
 import { QuizButton } from "../ui/QuizMenuButton/QuizButton.jsx";
 import { QuizQuestion } from "../ui/QuizQuestionButton/QuizQuestion.jsx";
 import { Title } from "../Title/Title.jsx";
-
 import data from "../../data.json";
+import styles from "./HtmlQuiz.module.css";
 
 const quizData = data.quizzes.find((quiz) => quiz.title === "HTML");
 const icons = quizData.icon;
@@ -38,33 +38,30 @@ export function HtmlQuiz() {
 
   return (
     <>
-      <header>
+      <header className={styles.headerContainer}>
         <Title icon={icons} title={quizData.title} />
       </header>
 
       <main>
-        <div>
+        <div className={styles.questionContainer}>
           <div>
-            <p>
+            <p className={styles.questionTextNumber}>
               Question {currentQuestionIndex + 1} of {questions.length}
             </p>
           </div>
           <div>
-            <p>{currentQuestion.question}</p>
+            <p className={styles.questionText}>{currentQuestion.question}</p>
           </div>
         </div>
 
-        <div>
-          <ul>
+        <div className={styles.questionButtonContainer}>
+          <ul className={styles.questionList}>
             {currentQuestion.options.map((option, index) => (
               <li key={index}>
                 <QuizQuestion
                   type={String.fromCharCode(65 + index)}
                   onClick={() => handleAnswerSelect(index)}
-                  style={{
-                    backgroundColor:
-                      selectedAnswer === index ? "#adc2e1" : "white",
-                  }}
+                  className={styles.btn}
                 >
                   <div>{option}</div>
                 </QuizQuestion>
