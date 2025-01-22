@@ -7,3 +7,21 @@
   transition: background-color 0.3s ease;
   box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
 }
+
+.questionTypeBox {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.313rem;
+  color: #626c7f;
+  background-color: #eaedf2;
+}
+
+.questionBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+}

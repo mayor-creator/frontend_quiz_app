@@ -70,12 +70,13 @@ export function HtmlQuiz() {
           </ul>
         </div>
 
-        <div>
+        <div className={styles.submitBtnContainer}>
           <QuizButton
+            className={styles.submitBtn}
             onClick={handleNextQuestion}
             disabled={selectedAnswer === null}
           >
-            Submit
+            Submit Answer
           </QuizButton>
         </div>
       </main>

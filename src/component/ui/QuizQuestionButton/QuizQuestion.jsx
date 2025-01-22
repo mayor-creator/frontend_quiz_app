@@ -4,8 +4,8 @@ export function QuizQuestion({ className, type, children, ...delegated }) {
   return (
     <>
       <button className={`${styles.button} ${className}`} {...delegated}>
-        <div>{type}</div>
-        <div>{children}</div>
+        <div className={styles.questionTypeBox}>{type}</div>
+        <div className={styles.questionBox}>{children}</div>
       </button>
     </>
   );
