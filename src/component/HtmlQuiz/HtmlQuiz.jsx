@@ -63,7 +63,7 @@ export function HtmlQuiz() {
                   onClick={() => handleAnswerSelect(index)}
                   className={styles.btn}
                 >
-                  <div>{option}</div>
+                  <p>{option}</p>
                 </QuizQuestion>
               </li>
             ))}
