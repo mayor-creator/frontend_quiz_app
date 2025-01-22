@@ -1,0 +1,73 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.questionTextNumber {
+  color: var(--color-grey-navy);
+  font-style: italic;
+  font-weight: 14px;
+}
+
+.questionText {
+  color: var(--color-dark-navy);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.questionButtonContainer {
+  padding-top: 40px;
+}
+
+.questionList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  color: var(--color-dark-navy);
+  border-radius: 0.75rem;
+  background-color: var(--color-pure-white);
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+[data-theme="dark"] {
+  .questionTextNumber {
+    color: var(--color-light-bluish);
+  }
+
+  .questionText {
+    color: var(--color-pure-white);
+  }
+
+  .btn {
+    color: var(--color-pure-white);
+    background-color: var(--color-navy);
+  }
+}
