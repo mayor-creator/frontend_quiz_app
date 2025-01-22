@@ -60,8 +60,9 @@ export function HtmlQuiz() {
               <li key={index}>
                 <QuizQuestion
                   type={String.fromCharCode(65 + index)}
-                  onClick={() => handleAnswerSelect(index)}
                   className={styles.btn}
+                  onClick={() => handleAnswerSelect(index)}
+                  isSelected={selectedAnswer === index}
                 >
                   <p>{option}</p>
                 </QuizQuestion>

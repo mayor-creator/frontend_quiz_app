@@ -25,3 +25,12 @@
   align-items: center;
   height: 2.5rem;
 }
+
+.selected {
+  border: 2px solid var(--color-purple);
+}
+
+.selectedBox {
+  background-color: var(--color-purple);
+  color: var(--color-pure-white);
+}
