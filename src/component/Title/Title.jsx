@@ -8,10 +8,10 @@ export function Title({ title, icon }) {
         </div>
         <div>
           <h1>{title}</h1>
-          <div>
-            <ThemeToggle />
-          </div>
         </div>
+      </div>
+      <div>
+        <ThemeToggle />
       </div>
     </>
   );

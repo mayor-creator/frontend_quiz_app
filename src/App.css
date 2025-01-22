@@ -54,3 +54,7 @@ body {
     background-repeat: no-repeat;
   }
 }
+
+li {
+  list-style: none;
+}

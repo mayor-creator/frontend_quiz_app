@@ -1,7 +1,9 @@
-export function QuizQuestion({ type, children, ...delegated }) {
+import styles from "./QuizQuestion.module.css";
+
+export function QuizQuestion({ className, type, children, ...delegated }) {
   return (
     <>
-      <button {...delegated}>
+      <button className={`${styles.button} ${className}`} {...delegated}>
         <div>{type}</div>
         <div>{children}</div>
       </button>
