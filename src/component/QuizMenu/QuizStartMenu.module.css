@@ -99,3 +99,25 @@
     background-color: var(--color-navy);
   }
 }
+
+/* tablet */
+@media (min-width: 30.063em) and (max-width: 48em) {
+  .titleContainer {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  .titleText {
+    font-size: 4rem;
+    font-weight: 300;
+  }
+  .subjectText {
+    font-size: 1.25rem;
+  }
+  .buttonContainer {
+    gap: 1.5rem;
+  }
+  .btn {
+    gap: 1.5rem;
+    font-size: 1.75rem;
+  }
+}
