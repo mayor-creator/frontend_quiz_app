@@ -59,8 +59,16 @@ li {
   list-style: none;
 }
 
+/* tablet */
 @media (min-width: 30.063em) and (max-width: 48em) {
   body {
     padding: 3.125rem 2.5rem;
+  }
+}
+
+/* desktop */
+@media (min-width: 64em) {
+  body {
+    padding: 3.125rem 7.5rem;
   }
 }

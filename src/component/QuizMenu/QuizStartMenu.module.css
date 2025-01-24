@@ -121,3 +121,26 @@
     font-size: 1.75rem;
   }
 }
+
+/*desktop */
+@media (min-width: 64em) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 120px;
+  }
+  .titleText {
+    font-size: 4rem;
+    font-weight: 300;
+  }
+  .subjectText {
+    font-size: 1.25rem;
+  }
+  .buttonContainer {
+    gap: 1.5rem;
+  }
+  .btn {
+    gap: 2rem;
+    font-size: 1.75rem;
+  }
+}

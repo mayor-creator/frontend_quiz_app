@@ -28,7 +28,7 @@ export function QuizStartMenu() {
             <ThemeToggle />
           </header>
 
-          <main>
+          <main className={styles.main}>
             <div className={styles.titleContainer}>
               <div className={styles.headerTitleContainer}>
                 <h1 className={styles.titleText}>
