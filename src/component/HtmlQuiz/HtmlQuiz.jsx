@@ -1,10 +1,10 @@
 import { useState } from "react";
+import data from "../../data.json";
 
 import { QuizButton } from "../ui/QuizMenuButton/QuizButton.jsx";
 import { QuizQuestion } from "../ui/QuizQuestionButton/QuizQuestion.jsx";
 import { Title } from "../Title/Title.jsx";
 import { QuizResult } from "../ui/Results/QuizResults.jsx";
-import data from "../../data.json";
 import styles from "./HtmlQuiz.module.css";
 
 const quizData = data.quizzes.find((quiz) => quiz.title === "HTML");
@@ -42,6 +42,7 @@ export function HtmlQuiz() {
     }
   };
 
+  //function to reset the quiz state
   const handleQuizPlayAgain = () => {
     setCurrentQuestionIndex(0);
     setSelectedAnswer(null);

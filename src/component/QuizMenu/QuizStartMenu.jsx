@@ -13,6 +13,7 @@ import styles from "./QuizStartMenu.module.css";
 export function QuizStartMenu() {
   const [isHtmlQuizStarted, setIsHtmlQuizStarted] = useState(false);
 
+  // function to start the HTML quiz
   const handleHtmlQuizStart = () => {
     setIsHtmlQuizStarted(true);
   };
