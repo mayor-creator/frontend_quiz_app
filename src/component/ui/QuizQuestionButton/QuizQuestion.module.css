@@ -27,7 +27,7 @@
 }
 
 .selected {
-  border: 2px solid var(--color-purple);
+  border: 0.125rem solid var(--color-purple);
 }
 
 .selectedBox {

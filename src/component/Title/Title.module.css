@@ -1,12 +1,12 @@
 .titleContainer {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
 }
 
 .title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
   text-transform: capitalize;
 }
