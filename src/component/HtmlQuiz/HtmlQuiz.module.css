@@ -99,3 +99,27 @@
     background-color: var(--color-navy);
   }
 }
+
+/* tablet */
+@media (min-width: 30.063em) and (max-width: 48em) {
+  .questionContainer {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  .questionTextNumber {
+    font-size: 1.25rem;
+  }
+  .questionText {
+    font-size: 2.25rem;
+  }
+  .questionList {
+    gap: 1.25rem;
+  }
+  .questionButtonContainer {
+    padding-top: 0rem;
+  }
+  .btn {
+    gap: 2rem;
+    font-size: 1.75rem;
+  }
+}
