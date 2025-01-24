@@ -47,7 +47,6 @@ export function HtmlQuiz() {
     setSelectedAnswer(null);
     setScore(0);
     setIsQuizOver(false);
-    console.log("hello");
   };
 
   return (
