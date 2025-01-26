@@ -52,7 +52,7 @@ export function HtmlQuiz() {
 
   return (
     <>
-      <header className={styles.headerContainer}>
+      <header className={`${styles.headerContainer} ${styles.header}`}>
         <Title icon={icons} title={quizData.title} />
       </header>
 
@@ -65,7 +65,7 @@ export function HtmlQuiz() {
           handleRestartQuiz={handleQuizPlayAgain}
         />
       ) : (
-        <main>
+        <main className={styles.main}>
           <div className={styles.questionContainer}>
             <div>
               <p className={styles.questionTextNumber}>
@@ -77,31 +77,33 @@ export function HtmlQuiz() {
             </div>
           </div>
 
-          <div className={styles.questionButtonContainer}>
-            <ul className={styles.questionList}>
-              {currentQuestion.options.map((option, index) => (
-                <li key={index}>
-                  <QuizQuestion
-                    type={String.fromCharCode(65 + index)}
-                    className={styles.btn}
-                    onClick={() => handleAnswerSelect(index)}
-                    isSelected={selectedAnswer === index}
-                  >
-                    <p>{option}</p>
-                  </QuizQuestion>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div>
+            <div className={styles.questionButtonContainer}>
+              <ul className={styles.questionList}>
+                {currentQuestion.options.map((option, index) => (
+                  <li key={index}>
+                    <QuizQuestion
+                      type={String.fromCharCode(65 + index)}
+                      className={styles.btn}
+                      onClick={() => handleAnswerSelect(index)}
+                      isSelected={selectedAnswer === index}
+                    >
+                      <p>{option}</p>
+                    </QuizQuestion>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className={styles.submitBtnContainer}>
-            <QuizButton
-              className={styles.submitBtn}
-              onClick={handleNextQuestion}
-              disabled={selectedAnswer === null}
-            >
-              Submit Answer
-            </QuizButton>
+            <div className={styles.submitBtnContainer}>
+              <QuizButton
+                className={styles.submitBtn}
+                onClick={handleNextQuestion}
+                disabled={selectedAnswer === null}
+              >
+                Submit Answer
+              </QuizButton>
+            </div>
           </div>
         </main>
       )}

@@ -123,3 +123,44 @@
     font-size: 1.75rem;
   }
 }
+
+@media (min-width: 64em) {
+  :root {
+    --main-width: min(100% - 2rem, 72.5rem);
+  }
+  .header {
+    width: var(--main-width);
+    margin-inline: auto;
+    padding-top: 7.5rem;
+    padding-bottom: 0rem;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--main-width);
+  }
+  .questionButtonContainer {
+    padding-top: 0rem;
+  }
+  .titleContainer {
+    padding: 0rem;
+  }
+  .questionTextNumber {
+    font-size: 1.25rem;
+  }
+  .questionText {
+    font-size: 2.25rem;
+    font-weight: 500;
+  }
+  .buttonContainer {
+    gap: 1.5rem;
+  }
+  .btn {
+    gap: 2rem;
+    font-size: 1.75rem;
+  }
+}

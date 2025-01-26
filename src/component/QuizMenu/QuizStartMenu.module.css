@@ -130,7 +130,7 @@
   .header {
     width: var(--main-width);
     margin-inline: auto;
-    padding-top: 120px;
+    padding-top: 7.5rem;
   }
   .main {
     display: grid;
@@ -140,7 +140,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: var(--main-width);
-    padding: 1rem;
   }
   .titleContainer {
     padding: 0rem;

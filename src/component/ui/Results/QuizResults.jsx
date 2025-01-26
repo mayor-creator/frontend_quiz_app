@@ -10,7 +10,7 @@ export function QuizResult({
 }) {
   return (
     <>
-      <main>
+      <main className={styles.main}>
         <div className={styles.headerContainer}>
           <h1 className={styles.headerTitle}>
             Quiz completed{" "}
