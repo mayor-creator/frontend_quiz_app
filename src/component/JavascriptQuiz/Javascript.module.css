@@ -137,6 +137,7 @@
   .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 7.5rem;
     position: absolute;
     top: 50%;
     left: 50%;

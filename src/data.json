@@ -255,7 +255,7 @@
     },
     {
       "title": "Accessibility",
-      "icon": "./assets/images/icon-accessibility.svg",
+      "icon": "../src/assets/images/icon-accessibility.svg",
       "questions": [
         {
           "question": "What does 'WCAG' stand for?",

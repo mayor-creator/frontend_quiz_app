@@ -5,6 +5,7 @@ import { QuizButton } from "../ui/QuizMenuButton/QuizButton.jsx";
 import { HtmlQuiz } from "../HtmlQuiz/HtmlQuiz.jsx";
 import { CssQuiz } from "../CssQuiz/CssQuiz.jsx";
 import { JavascriptQuiz } from "../JavascriptQuiz/JavascriptQuiz.jsx";
+import { AccessibilityQuiz } from "../AccessibilityQuiz/AccessibilityQuiz.jsx";
 
 import htmlIcon from "../../assets/images/icon-html.svg";
 import cssIcon from "../../assets/images/icon-css.svg";
@@ -24,6 +25,7 @@ export function QuizStartMenu() {
       {activeQuiz === "html" && <HtmlQuiz />}
       {activeQuiz === "css" && <CssQuiz />}
       {activeQuiz === "javascript" && <JavascriptQuiz />}
+      {activeQuiz === "accessibility" && <AccessibilityQuiz />}
 
       {activeQuiz === null && (
         <>
@@ -94,7 +96,10 @@ export function QuizStartMenu() {
                 </QuizButton>
               </div>
               <div>
-                <QuizButton className={styles.btn}>
+                <QuizButton
+                  className={styles.btn}
+                  onClick={() => handleQuizStart("accessibility")}
+                >
                   <div className={`${styles.imgBox} ${styles.accessibility}`}>
                     <img
                       src={accessibilityIcon}
