@@ -24,7 +24,7 @@ export function QuizStartMenu() {
 
       {!isHtmlQuizStarted && (
         <>
-          <header>
+          <header className={styles.header}>
             <ThemeToggle />
           </header>
 

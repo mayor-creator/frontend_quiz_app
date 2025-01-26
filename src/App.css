@@ -69,6 +69,6 @@ li {
 /* desktop */
 @media (min-width: 64em) {
   body {
-    padding: 3.125rem 7.5rem;
+    padding: 0rem;
   }
 }

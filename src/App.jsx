@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <ThemeContextProvider>
-          <QuizStartMenu />
+        <QuizStartMenu />
       </ThemeContextProvider>
     </>
   );

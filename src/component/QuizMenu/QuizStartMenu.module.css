@@ -124,10 +124,26 @@
 
 /*desktop */
 @media (min-width: 64em) {
+  :root {
+    --main-width: min(100% - 2rem, 72.5rem);
+  }
+  .header {
+    width: var(--main-width);
+    margin-inline: auto;
+    padding-top: 120px;
+  }
   .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--main-width);
+    padding: 1rem;
+  }
+  .titleContainer {
+    padding: 0rem;
   }
   .titleText {
     font-size: 4rem;
