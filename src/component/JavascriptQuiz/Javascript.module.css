@@ -1,0 +1,166 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.questionTextNumber {
+  color: var(--color-grey-navy);
+  font-style: italic;
+  font-weight: 0.875rem;
+}
+
+.questionText {
+  color: var(--color-dark-navy);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.questionButtonContainer {
+  padding-top: 2.5rem;
+}
+
+.questionList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  color: var(--color-dark-navy);
+  border-radius: 0.75rem;
+  background-color: var(--color-pure-white);
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.125rem var(--color-primary);
+}
+
+.submitBtnContainer {
+  padding-top: 0.75rem;
+}
+
+.submitBtn {
+  border-radius: 0.75rem;
+  background-color: var(--color-purple);
+  color: var(--color-pure-white);
+  height: 3.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 0.75rem;
+}
+
+.submitBtn:hover {
+  background-color: var(--color-light-purple);
+  transform: scale(1.02);
+}
+
+.submitBtn:active {
+  transform: scale(0.98);
+}
+
+.submitBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.125rem var(--color-primary);
+}
+
+[data-theme="dark"] {
+  .questionTextNumber {
+    color: var(--color-light-bluish);
+  }
+
+  .questionText {
+    color: var(--color-pure-white);
+  }
+
+  .btn {
+    color: var(--color-pure-white);
+    background-color: var(--color-navy);
+  }
+}
+
+/* tablet */
+@media (min-width: 30.063em) and (max-width: 48em) {
+  .questionContainer {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  .questionTextNumber {
+    font-size: 1.25rem;
+  }
+  .questionText {
+    font-size: 2.25rem;
+  }
+  .questionList {
+    gap: 1.25rem;
+  }
+  .questionButtonContainer {
+    padding-top: 0rem;
+  }
+  .btn {
+    gap: 2rem;
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 64em) {
+  :root {
+    --main-width: min(100% - 2rem, 72.5rem);
+  }
+  .header {
+    width: var(--main-width);
+    margin-inline: auto;
+    padding-top: 7.5rem;
+    padding-bottom: 0rem;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--main-width);
+  }
+  .questionButtonContainer {
+    padding-top: 0rem;
+  }
+  .titleContainer {
+    padding: 0rem;
+  }
+  .questionTextNumber {
+    font-size: 1.25rem;
+  }
+  .questionText {
+    font-size: 2.25rem;
+    font-weight: 500;
+  }
+  .buttonContainer {
+    gap: 1.5rem;
+  }
+  .btn {
+    gap: 2rem;
+    font-size: 1.75rem;
+  }
+}

@@ -4,6 +4,7 @@ import { ThemeToggle } from "../Theme/Theme.jsx";
 import { QuizButton } from "../ui/QuizMenuButton/QuizButton.jsx";
 import { HtmlQuiz } from "../HtmlQuiz/HtmlQuiz.jsx";
 import { CssQuiz } from "../CssQuiz/CssQuiz.jsx";
+import { JavascriptQuiz } from "../JavascriptQuiz/JavascriptQuiz.jsx";
 
 import htmlIcon from "../../assets/images/icon-html.svg";
 import cssIcon from "../../assets/images/icon-css.svg";
@@ -12,26 +13,19 @@ import accessibilityIcon from "../../assets/images/icon-accessibility.svg";
 import styles from "./QuizStartMenu.module.css";
 
 export function QuizStartMenu() {
-  const [isHtmlQuizStarted, setIsHtmlQuizStarted] = useState(false);
-  const [isCssQuizStarted, setIsCssQuizStarted] = useState(false);
+  const [activeQuiz, setActiveQuiz] = useState(null);
 
-  // function to start the HTML quiz
-  const handleHtmlQuizStart = () => {
-    setIsHtmlQuizStarted(true);
-    setIsCssQuizStarted(false);
-  };
-
-  const handleCssQuizStart = () => {
-    setIsCssQuizStarted(true);
-    setIsHtmlQuizStarted(false);
+  const handleQuizStart = (quizType) => {
+    setActiveQuiz(quizType);
   };
 
   return (
     <>
-      {isHtmlQuizStarted && <HtmlQuiz />}
-      {isCssQuizStarted && <CssQuiz />}
+      {activeQuiz === "html" && <HtmlQuiz />}
+      {activeQuiz === "css" && <CssQuiz />}
+      {activeQuiz === "javascript" && <JavascriptQuiz />}
 
-      {!isHtmlQuizStarted && !isCssQuizStarted && (
+      {activeQuiz === null && (
         <>
           <header className={styles.header}>
             <ThemeToggle />
@@ -53,7 +47,7 @@ export function QuizStartMenu() {
               <div>
                 <QuizButton
                   className={styles.btn}
-                  onClick={handleHtmlQuizStart}
+                  onClick={() => handleQuizStart("html")}
                 >
                   <div className={`${styles.imgBox} ${styles.html}`}>
                     <img
@@ -69,7 +63,10 @@ export function QuizStartMenu() {
                 </QuizButton>
               </div>
               <div>
-                <QuizButton className={styles.btn} onClick={handleCssQuizStart}>
+                <QuizButton
+                  className={styles.btn}
+                  onClick={() => handleQuizStart("css")}
+                >
                   <div className={`${styles.imgBox} ${styles.css}`}>
                     <img src={cssIcon} alt="css icon" width={24} height={24} />
                   </div>
@@ -79,7 +76,10 @@ export function QuizStartMenu() {
                 </QuizButton>
               </div>
               <div>
-                <QuizButton className={styles.btn}>
+                <QuizButton
+                  className={styles.btn}
+                  onClick={() => handleQuizStart("javascript")}
+                >
                   <div className={`${styles.imgBox} ${styles.js}`}>
                     <img
                       src={jsIcon}
