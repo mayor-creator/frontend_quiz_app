@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ThemeToggle } from "../Theme/Theme.jsx";
 import { QuizButton } from "../ui/QuizMenuButton/QuizButton.jsx";
 import { HtmlQuiz } from "../HtmlQuiz/HtmlQuiz.jsx";
+import { CssQuiz } from "../CssQuiz/CssQuiz.jsx";
 
 import htmlIcon from "../../assets/images/icon-html.svg";
 import cssIcon from "../../assets/images/icon-css.svg";
@@ -12,17 +13,25 @@ import styles from "./QuizStartMenu.module.css";
 
 export function QuizStartMenu() {
   const [isHtmlQuizStarted, setIsHtmlQuizStarted] = useState(false);
+  const [isCssQuizStarted, setIsCssQuizStarted] = useState(false);
 
   // function to start the HTML quiz
   const handleHtmlQuizStart = () => {
     setIsHtmlQuizStarted(true);
+    setIsCssQuizStarted(false);
+  };
+
+  const handleCssQuizStart = () => {
+    setIsCssQuizStarted(true);
+    setIsHtmlQuizStarted(false);
   };
 
   return (
     <>
       {isHtmlQuizStarted && <HtmlQuiz />}
+      {isCssQuizStarted && <CssQuiz />}
 
-      {!isHtmlQuizStarted && (
+      {!isHtmlQuizStarted && !isCssQuizStarted && (
         <>
           <header className={styles.header}>
             <ThemeToggle />
@@ -60,7 +69,7 @@ export function QuizStartMenu() {
                 </QuizButton>
               </div>
               <div>
-                <QuizButton className={styles.btn}>
+                <QuizButton className={styles.btn} onClick={handleCssQuizStart}>
                   <div className={`${styles.imgBox} ${styles.css}`}>
                     <img src={cssIcon} alt="css icon" width={24} height={24} />
                   </div>
