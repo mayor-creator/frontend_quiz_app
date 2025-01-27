@@ -101,7 +101,7 @@
 }
 
 /* tablet */
-@media (min-width: 30.063em) and (max-width: 48em) {
+@media (min-width: 48em) and (max-width: 63.9383em) {
   .questionContainer {
     padding-top: 2.5rem;
     padding-bottom: 4rem;

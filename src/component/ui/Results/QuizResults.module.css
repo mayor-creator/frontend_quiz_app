@@ -86,7 +86,8 @@
   }
 }
 
-@media (min-width: 30.063em) and (max-width: 48em) {
+/* tablet */
+@media (min-width: 48em) and (max-width: 63.9383em) {
   .headerContainer {
     padding-top: 2rem;
     padding-bottom: 4rem;
