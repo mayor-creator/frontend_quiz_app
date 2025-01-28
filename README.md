@@ -39,9 +39,9 @@ Users should be able to:
 
 ### Screenshot
 
-![mobileDark]("./mobileDark.png")
-![mobileLight]("./mobileLight.png")
-![laptop]("./laptop.png")
+![mobileDark](./mobileDark.png)
+![mobileLight](./mobileLight.png)
+![laptop](./laptop.png)
 
 ### Links
 
