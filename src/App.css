@@ -38,7 +38,7 @@ body {
 }
 
 /* Tablet */
-@media (min-width: 30.063em) and (max-width: 48em) {
+@media (min-width: 48em) and (max-width: 63.9383em) {
   body {
     background-image: var(--tablet-bg);
     background-size: cover;
@@ -60,7 +60,7 @@ li {
 }
 
 /* tablet */
-@media (min-width: 30.063em) and (max-width: 48em) {
+@media (min-width: 48em) and (max-width: 63.9383em) {
   body {
     padding: 3.125rem 2.5rem;
   }
