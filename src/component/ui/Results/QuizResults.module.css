@@ -118,31 +118,29 @@
 }
 
 @media (min-width: 64em) {
-  @media (min-width: 64em) {
-    :root {
-      --main-width: min(100% - 2rem, 72.5rem);
-    }
-    .header {
-      width: var(--main-width);
-      margin-inline: auto;
-      padding-top: 7.5rem;
-      padding-bottom: 0rem;
-    }
-    .main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: var(--main-width);
-    }
-    .headerContainer {
-      padding: 0rem;
-    }
-    .headerTitle {
-      font-size: 4rem;
-      font-weight: 300;
-    }
+  :root {
+    --main-width: min(100% - 2rem, 72.5rem);
+  }
+  .header {
+    width: var(--main-width);
+    margin-inline: auto;
+    padding-top: 7.5rem;
+    padding-bottom: 0rem;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--main-width);
+  }
+  .headerContainer {
+    padding: 0rem;
+  }
+  .headerTitle {
+    font-size: 4rem;
+    font-weight: 300;
   }
 }
