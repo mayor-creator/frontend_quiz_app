@@ -25,6 +25,9 @@ export function ThemeToggle() {
             onChange={toggleTheme}
             id={id}
             checked={isChecked}
+            aria-label="Toggle dark mode"
+            role="switch"
+            aria-checked={isChecked}
           />
           <span className={`${styles.slider} ${styles.round}`}></span>
         </label>
