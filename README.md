@@ -17,25 +17,23 @@ This is a solution to the [Frontend quiz app challenge on Frontend Mentor](https
     - [Useful resources](#useful-resources)
   - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
 
 Users should be able to:
 
-- Select a quiz subject
+- Select a quiz subject (HTML, CSS, JavaScript, or Accessibility)
 - Select a single answer from each question from a choice of four
-- See an error message when trying to submit an answer without making a selection
+- See a disabled submit button when no answer is selected
 - See if they have made a correct or incorrect choice when they submit an answer
-- Move on to the next question after seeing the question result
-- See a completed state with the score after the final question
+- Move on to the next question after submitting an answer
+- See a completed state with their score after the final question
 - Play again to choose another subject
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-- Navigate the entire app only using their keyboard
-- **Bonus**: Change the app's theme between light and dark
+- View responsive layouts optimized for mobile, tablet and desktop screens
+- See hover and focus states for all interactive elements
+- Navigate the entire app using only a keyboard
+- Toggle between light and dark themes
 
 ### Screenshot
 
@@ -52,41 +50,47 @@ Users should be able to:
 
 ### Built with
 
+- React 18 with Vite
+- CSS Modules for scoped styling
+- CSS Custom Properties for theming
+- Flexbox and CSS Grid for layouts
+- Mobile-first responsive design
+- Context API for theme management
 - Semantic HTML5 markup
-- CSS custom properties
-- Flex box
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
+- ARIA attributes for accessibility
+- CSS animations and transitions
 
 ### What I learned
 
-```js
-export function QuizQuestion({
-  className,
-  type,
-  children,
-  isSelected,
-  ...delegated
-}) {
+- Implemented a theme toggle using React Context:
+
+```jsx
+export function ThemeToggle() {
+  const id = useId();
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const isChecked = theme === "dark";
+
   return (
-    <>
-      <button
-        className={`${styles.button} ${className} ${
-          isSelected ? styles.selected : ""
-        }`}
-        {...delegated}
-      >
-        <div
-          className={`${styles.questionTypeBox} ${
-            isSelected ? styles.selectedBox : ""
-          }`}
-        >
-          {type}
-        </div>
-        <div className={styles.questionBox}>{children}</div>
-      </button>
-    </>
+    <div className={styles.themeContainer}>
+      <div>
+        <img src={lightIcon} alt="sun icon" />
+      </div>
+      <label htmlFor={id} className={styles.switch}>
+        <input
+          type="checkbox"
+          onChange={toggleTheme}
+          id={id}
+          checked={isChecked}
+          aria-label="Toggle dark mode"
+          role="switch"
+          aria-checked={isChecked}
+        />
+        <span className={`${styles.slider} ${styles.round}`}></span>
+      </label>
+      <div>
+        <img src={darkIcon} alt="moon icon" />
+      </div>
+    </div>
   );
 }
 ```
