@@ -1,14 +1,36 @@
 .button {
-  border: none;
-  border-radius: 1.5rem;
+  min-height: 3.5rem;
+  border: 0.125rem solid transparent;
   width: 100%;
-  padding: 0.5rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.08);
+
+  /* Add hover state */
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.12);
+  }
+
+  /* Add focus state for accessibility */
+  &:focus-visible {
+    outline: 0.25rem solid var(--color-purple);
+    outline-offset: 0.125rem;
+  }
+
+  /* Add active state */
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 0.063rem 0.188rem rgba(0, 0, 0, 0.1);
+  }
 }
 
 .questionTypeBox {
+  flex-shrink: 0;
   width: 2.5rem;
   height: 2.5rem;
   display: flex;
@@ -17,20 +39,52 @@
   border-radius: 0.313rem;
   color: #626c7f;
   background-color: #eaedf2;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
 }
 
 .questionBox {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 2.5rem;
+  min-height: 2.5rem;
+  flex: 1;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
 }
 
 .selected {
   border: 0.125rem solid var(--color-purple);
+  background-color: rgba(167, 41, 245, 0.05);
 }
 
 .selectedBox {
   background-color: var(--color-purple);
   color: var(--color-pure-white);
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 48rem) {
+  .button {
+    padding: 0.625rem 1rem;
+  }
+
+  .questionTypeBox {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Add reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .questionTypeBox {
+    transition: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
 }
