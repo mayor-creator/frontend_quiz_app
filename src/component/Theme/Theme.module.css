@@ -56,3 +56,17 @@ input:focus + .slider {
 input:checked + .slider:before {
   transform: translateX(1.625rem);
 }
+
+/* Add reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .slider,
+  .slider:before {
+    transition: none;
+  }
+}
+
+/* Improve toggle button accessibility */
+.switch input:focus-visible + .slider {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 2px;
+}
