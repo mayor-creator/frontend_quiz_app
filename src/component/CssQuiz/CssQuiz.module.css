@@ -42,10 +42,13 @@
   padding: 0.75rem;
   font-size: 1.125rem;
   font-weight: 500;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  will-change: transform;
 }
 
 .btn:hover {
   transform: scale(1.02);
+  will-change: transform;
 }
 
 .btn:active {
@@ -55,6 +58,11 @@
 .btn:focus {
   outline: none;
   box-shadow: 0 0 0 0.125rem var(--color-primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 2px;
 }
 
 .submitBtnContainer {
