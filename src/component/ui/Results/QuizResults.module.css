@@ -1,35 +1,53 @@
+/* Base Variables */
+:root {
+  --score-card-padding-mobile: 2rem;
+  --score-card-padding-tablet: 3rem;
+  --header-font-size-mobile: 2.5rem;
+  --header-font-size-desktop: 4rem;
+  --main-width: min(100% - 2rem, 72.5rem);
+  --transition-speed: 0.2s;
+}
+
+/* Base Styles */
 .headerContainer {
-  padding-top: 2rem;
-  padding-bottom: 2.5rem;
+  padding-block: clamp(2rem, 4vw, 2.5rem);
 }
 
 .headerTitle {
   color: var(--color-dark-navy);
-  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 300;
+  line-height: 1.2;
 }
 
 .scoreTitle {
   font-weight: 500;
+  display: block;
+  margin-top: 0.5rem;
 }
 
+/* Score Card Styles */
 .scoreCardContainer {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  isolation: isolate;
 }
 
 .scoreCardChildContainer {
   background-color: var(--color-pure-white);
   border-radius: 0.75rem;
-  padding: 2rem;
+  padding: var(--score-card-padding-mobile);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease;
 }
 
+/* Title Styles */
 .titleContainer {
   display: flex;
   gap: 1rem;
@@ -38,97 +56,87 @@
 }
 
 .title {
-  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 2vw, 1.75rem);
   font-weight: 500;
   text-transform: capitalize;
 }
 
+/* Score Display */
 .scoreText {
-  font-size: 5.5rem;
+  font-size: clamp(5.5rem, 10vw, 9rem);
   font-weight: 500;
   word-break: break-word;
   max-width: 100%;
+  line-height: 1;
 }
 
 .scoreTotal {
-  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
   font-weight: 300;
+  display: block;
+  margin-top: 0.5rem;
 }
 
+/* Button Styles */
 .submitBtn {
   border-radius: 0.75rem;
   background-color: var(--color-purple);
   color: var(--color-pure-white);
   height: 3.5rem;
-  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 2vw, 1.75rem);
   font-weight: 500;
   padding: 0.75rem;
+  transition: all var(--transition-speed) ease;
 }
 
 .submitBtn:hover {
   background-color: var(--color-light-purple);
-  transform: scale(1.02);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(167, 41, 245, 0.2);
 }
 
 .submitBtn:active {
-  transform: scale(0.98);
+  transform: translateY(1px);
 }
 
-.submitBtn:focus {
-  outline: none;
-  box-shadow: 0 0 0 0.125rem var(--color-primary);
+.submitBtn:focus-visible {
+  outline: 0.25rem solid var(--color-purple);
+  outline-offset: 0.125rem;
 }
 
+/* Dark Theme */
 [data-theme="dark"] {
   .headerTitle {
     color: var(--color-pure-white);
   }
   .scoreCardChildContainer {
     background-color: var(--color-navy);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 
-/* tablet */
-@media (min-width: 48em) and (max-width: 63.9383em) {
+/* Responsive Design - Tablet */
+@media (min-width: 48em) {
   .headerContainer {
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-block: clamp(2rem, 6vw, 4rem);
   }
-  .headerTitle {
-    font-size: 4rem;
-  }
+
   .scoreCardChildContainer {
-    padding: 3rem;
+    padding: var(--score-card-padding-tablet);
     gap: 2.5rem;
   }
+
   .titleContainer {
     gap: 1.5rem;
   }
-  .title {
-    font-size: 1.75rem;
-  }
-  .scoreText {
-    font-size: 9rem;
-  }
-  .scoreTotal {
-    font-size: 1.5rem;
-  }
+
   .submitBtn {
-    font-size: 1.75rem;
     margin-top: 2rem;
   }
 }
 
+/* Responsive Design - Desktop */
 @media (min-width: 64em) {
-  :root {
-    --main-width: min(100% - 2rem, 72.5rem);
-  }
-  .header {
-    width: var(--main-width);
-    margin-inline: auto;
-    padding-top: 7.5rem;
-    padding-bottom: 0rem;
-  }
   .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -138,21 +146,37 @@
     transform: translate(-50%, -50%);
     width: var(--main-width);
   }
+
   .headerContainer {
-    padding: 0rem;
-  }
-  .headerTitle {
-    font-size: 4rem;
-    font-weight: 300;
+    padding: 0;
   }
 }
 
-/* Add print styles */
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .submitBtn,
+  .scoreCardChildContainer {
+    transition: none;
+  }
+
+  .submitBtn:hover {
+    transform: none;
+  }
+}
+
+/* Print Styles */
 @media print {
   .submitBtn {
     display: none;
   }
+
   .scoreCardContainer {
     break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .scoreCardChildContainer {
+    box-shadow: none;
+    border: 1px solid #ccc;
   }
 }
