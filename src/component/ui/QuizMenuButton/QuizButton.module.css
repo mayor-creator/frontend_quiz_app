@@ -7,3 +7,23 @@
   transition: background-color 0.3s ease;
   box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
 }
+
+/* Responsive styles */
+@media (max-width: 48rem) {
+  .button {
+    padding: 0.625rem 1rem;
+    min-height: 2.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .button:hover:not(:disabled) {
+    transform: none;
+  }
+}
