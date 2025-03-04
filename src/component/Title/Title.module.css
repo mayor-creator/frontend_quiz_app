@@ -1,12 +1,52 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+
 .titleContainer {
   display: flex;
+  align-items: center;
   gap: 1rem;
-  justify-content: center;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.titleWrapper {
+  display: flex;
   align-items: center;
 }
 
 .title {
-  font-size: 1.125rem;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 500;
-  text-transform: capitalize;
+  color: var(--color-text);
+}
+
+.themeToggleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .title {
+  color: var(--color-text-dark);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .icon {
+    transition: none;
+  }
 }
