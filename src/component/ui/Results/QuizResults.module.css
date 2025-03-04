@@ -46,6 +46,8 @@
 .scoreText {
   font-size: 5.5rem;
   font-weight: 500;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .scoreTotal {
@@ -142,5 +144,15 @@
   .headerTitle {
     font-size: 4rem;
     font-weight: 300;
+  }
+}
+
+/* Add print styles */
+@media print {
+  .submitBtn {
+    display: none;
+  }
+  .scoreCardContainer {
+    break-inside: avoid;
   }
 }
