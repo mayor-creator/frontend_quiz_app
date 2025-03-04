@@ -1,18 +1,50 @@
+/* Custom Properties */
+:root {
+  /* Layout */
+  --main-width: min(100% - 2rem, 72.5rem);
+  --container-gap: clamp(0.75rem, 2vw, 1.5rem);
+  --button-gap: clamp(1rem, 2vw, 2rem);
+
+  /* Typography */
+  --title-font-size: clamp(2.5rem, 5vw, 4rem);
+  --subject-font-size: clamp(0.875rem, 2vw, 1.25rem);
+  --button-font-size: clamp(1.125rem, 2vw, 1.75rem);
+
+  /* Colors */
+  --quiz-html-bg: #ffb88f;
+  --quiz-css-bg: #88ebbb;
+  --quiz-js-bg: #8eadff;
+  --quiz-accessibility-bg: #cf88fa;
+
+  /* Transitions */
+  --transition-speed: 0.2s;
+
+  /* Add fallbacks for images */
+  --mobile-bg: url("../src/assets/images/pattern-background-mobile-light.svg")
+    no-repeat center/cover;
+  --tablet-bg: url("../src/assets/images/pattern-background-tablet-light.svg")
+    no-repeat center/cover;
+  --desktop-bg: url("../src/assets/images/pattern-background-desktop-light.svg")
+    no-repeat center/cover;
+}
+
+/* Base Layout Styles */
 .titleContainer {
-  padding-top: 2rem;
-  padding-bottom: 2.5rem;
+  padding-block: clamp(2rem, 4vw, 2.5rem) clamp(2.5rem, 6vw, 4rem);
 }
 
 .headerTitleContainer {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--container-gap);
 }
 
+/* Typography */
 .titleText {
-  color: #313e51;
-  font-size: 2.5rem;
-  font-weight: 400;
+  color: var(--color-dark-navy);
+  font-size: var(--title-font-size);
+  font-weight: 300;
+  line-height: 1.2;
 }
 
 .titleSpanText {
@@ -20,41 +52,46 @@
 }
 
 .subjectText {
-  font-size: 0.875rem;
+  font-size: var(--subject-font-size);
   font-style: italic;
   color: var(--color-grey-navy);
 }
 
+/* Button Container */
 .buttonContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--container-gap);
 }
 
+/* Button Styles */
 .btn {
   color: var(--color-dark-navy);
   border-radius: 0.75rem;
   background-color: var(--color-pure-white);
   display: flex;
-  gap: 1rem;
-  padding: 0.75rem;
-  font-size: 1.125rem;
+  gap: var(--button-gap);
+  padding: clamp(0.75rem, 2vw, 1rem);
+  font-size: var(--button-font-size);
   font-weight: 500;
+  transition: transform var(--transition-speed) ease-in-out;
+  will-change: transform;
 }
 
 .btn:hover {
-  transform: scale(1.02);
+  transform: translateY(-2px);
 }
 
 .btn:active {
-  transform: scale(0.98);
+  transform: translateY(1px);
 }
 
-.btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--color-primary);
+.btn:focus-visible {
+  outline: 0.25rem solid var(--color-primary);
+  outline-offset: 0.125rem;
 }
 
+/* Image Box Styles */
 .imgBox {
   display: flex;
   align-items: center;
@@ -62,37 +99,38 @@
   border-radius: 0.313rem;
   width: 2.5rem;
   height: 2.5rem;
+  flex-shrink: 0;
 }
 
 .imgBox img {
-  width: 24px; /* Explicit width/height to prevent layout shifts */
+  width: 24px;
   height: 24px;
   object-fit: contain;
 }
 
+/* Text Box Styles */
 .textBox {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 2.5rem;
+  flex: 1;
 }
 
+/* Quiz Type Colors */
 .html {
-  background-color: #ffb88f;
+  background-color: var(--quiz-html-bg);
 }
-
 .css {
-  background-color: #88ebbb;
+  background-color: var(--quiz-css-bg);
 }
-
 .js {
-  background-color: #8eadff;
+  background-color: var(--quiz-js-bg);
 }
-
 .accessibility {
-  background-color: #cf88fa;
+  background-color: var(--quiz-accessibility-bg);
 }
 
+/* Dark Theme */
 [data-theme="dark"] {
   .titleText {
     color: var(--color-pure-white);
@@ -106,15 +144,46 @@
   }
 }
 
-/* Add fallback values for CSS variables */
-:root {
-  /* Add fallbacks for images */
-  --mobile-bg: url("../src/assets/images/pattern-background-mobile-light.svg")
-    no-repeat center/cover;
-  --tablet-bg: url("../src/assets/images/pattern-background-tablet-light.svg")
-    no-repeat center/cover;
-  --desktop-bg: url("../src/assets/images/pattern-background-desktop-light.svg")
-    no-repeat center/cover;
+/* Desktop Layout */
+@media (min-width: 64em) {
+  .header {
+    width: var(--main-width);
+    margin-inline: auto;
+    padding-block-start: 7.5rem;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    width: var(--main-width);
+  }
+
+  .titleContainer {
+    padding: 0;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+
+  .btn:hover,
+  .btn:active {
+    transform: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .btn {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 }
 
 /* tablet */
