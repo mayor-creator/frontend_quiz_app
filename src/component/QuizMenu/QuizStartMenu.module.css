@@ -64,6 +64,12 @@
   height: 2.5rem;
 }
 
+.imgBox img {
+  width: 24px; /* Explicit width/height to prevent layout shifts */
+  height: 24px;
+  object-fit: contain;
+}
+
 .textBox {
   display: flex;
   justify-content: center;
@@ -98,6 +104,17 @@
     color: var(--color-pure-white);
     background-color: var(--color-navy);
   }
+}
+
+/* Add fallback values for CSS variables */
+:root {
+  /* Add fallbacks for images */
+  --mobile-bg: url("../src/assets/images/pattern-background-mobile-light.svg")
+    no-repeat center/cover;
+  --tablet-bg: url("../src/assets/images/pattern-background-tablet-light.svg")
+    no-repeat center/cover;
+  --desktop-bg: url("../src/assets/images/pattern-background-desktop-light.svg")
+    no-repeat center/cover;
 }
 
 /* tablet */
